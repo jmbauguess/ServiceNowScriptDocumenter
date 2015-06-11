@@ -1,0 +1,25 @@
+{
+  "name": "ServiceNowScriptDocumenter",
+  "version": "1.0.0",
+  "description": "Contains ServiceNow documentation",
+  "main": "index.js",
+  "author": "Justin Bauguess",
+  "repository" : "https://github.com/jmbauguess/ServiceNowScriptDocumenter",
+  "readme" : "https://github.com/jmbauguess/ServiceNowScriptDocumenter/readme.md",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-jsdoc": "^0.1.4",
+    "gulp-jshint": "^1.11.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.4.1",
+    "gulp-template": "^3.0.0",
+    "gulp-util": "^3.0.5",
+    "ink-docstrap": "^0.5.2",
+    "jsdoc": "^3.3.0",
+    "jsdoc-to-markdown": "^1.1.1",
+    "jshint-stylish": "^2.0.0",
+    "request": "^2.57.0"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "source": {
+        "include" : ["./sys_ui_script/", "./sys_script_include/"]
+    },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "dateFormat": "ddd MMM Do YYYY",
+    "outputSourceFiles": false,
+    "outputSourcePath": false,
+    "systemName": "ServiceNow Documentation",
+    "footer": "ScrippsNetworksInteractive JMB",
+    "copyright": "ScrippsNetworksInteractive",
+    "navType": "vertical",
+    "theme": "slate",
+    "linenums": true,
+    "collapseSymbols": false,
+    "inverseNav": true,
+    "highlightTutorialCode": true,
+    "protocol": "html://",
+    "methodHeadingReturns": false
+  }
+}

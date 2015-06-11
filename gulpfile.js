@@ -5,9 +5,9 @@ stylish = require('jshint-stylish'),
 runSequence = require('run-sequence'),
 gulpJsdoc2md = require("jsdoc-to-markdown"),
 commands = {
-    instance : 'scrippsdev',
-    username : '1.Selenium.Test',
-    password : '6isaR0bot'
+    instance : 'your instance',
+    username : 'your instance',
+    password : 'your instance'
 }
 
 gulp.task('default', function() {

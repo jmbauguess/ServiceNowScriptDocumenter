@@ -57,12 +57,12 @@ gulp.task('jshint-client', function() {
 });
 
 gulp.task('add-files', function() {
-    return gulp.src(['./all.md', './client.md', './server.md'])
+    return gulp.src(['./*'])
             .pipe(git.add());
 });
 
 gulp.task('commit-files', function() {
-    return gulp.src(['./all.md', './client.md', './server.md'])
+    return gulp.src(['./*'])
             .pipe(git.commit('Making an update with ' + options.reason));
 });
 

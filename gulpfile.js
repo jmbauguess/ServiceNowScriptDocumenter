@@ -4,18 +4,16 @@ jshint = require('gulp-jshint'),
 stylish = require('jshint-stylish'),
 runSequence = require('run-sequence'),
 gulpJsdoc2md = require("jsdoc-to-markdown"),
-commands = {
-    instance : 'your instance',
-    username : 'your instance',
-    password : 'your instance'
-}
+git = require('gulp-git');
+
+var options = require('minimist')(process.argv.slice(2));
 
 gulp.task('default', function() {
-	runSequence('extract', 'jsdoc', 'markdown-server', 'markdown-client', 'markdown-all');
+	runSequence('extract', 'jsdoc', 'markdown-server', 'markdown-client', 'markdown-all', 'add-files', 'commit-files', 'push-files');
 });
 
 gulp.task('extract', shell.task( [
-    ('node index.js ' + commands.instance + " " + commands.username + " " + commands.password)
+    ('node index.js ' + options.instance + " " + options.username + " " + options.password)
     ])
 );
 
@@ -56,4 +54,20 @@ gulp.task('jshint-client', function() {
              .pipe(jshint.reporter('gulp-jshint-file-reporter', {
                 filename: __dirname + '/jshint-client-output.log'
              }));
+});
+
+gulp.task('add-files', function() {
+    return gulp.src('./*.md')
+            .pipe(git.add());
+});
+
+gulp.task('commit-files', function() {
+    return gulp.src('./*.md')
+            .pipe(git.commit('Making an update with ' + options.reason + " on " + new Date()));
+});
+
+gulp.task('push-files', function() {
+    git.push('origin', 'master', function(err) {
+        if (err) throw err;
+    });
 });

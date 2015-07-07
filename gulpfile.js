@@ -65,7 +65,7 @@ gulp.task('commit-files', function() {
 });
 
 gulp.task('push-files', function() {
-    git.push('origin', 'master', function(err) {
+    git.push(options.remote, 'master', function(err) {
         if (err) throw err;
     });
 });
